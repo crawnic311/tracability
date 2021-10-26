@@ -25,13 +25,8 @@ app.get('/style', (req, res) => {
 })
 
 app.get('/api/error1', (req, res) => {
-    try {
-        nonExistentFunction();
-      } catch (error) {
-        console.error(error);
-        // expected output: ReferenceError: nonExistentFunction is not defined
-        // Note - error messages will vary depending on browser
-      }
+  nonExist() {
+  } 
 })
 
 app.use(rollbar.errorHandler())
