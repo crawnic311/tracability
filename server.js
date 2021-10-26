@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     rollbar.info('html file served successfully')
 })
 
-app.get('/front/style', (req, res) => {
+app.get('/style', (req, res) => {
     res.sendFile(path.join(__dirname, '/front/style.css'))
 })
 
