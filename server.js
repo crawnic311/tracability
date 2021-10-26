@@ -24,7 +24,7 @@ app.get('/style', (req, res) => {
     res.sendFile(path.join(__dirname, '/front/style.css'))
 })
 
-app.post('/api/error1', (req, res) => {
+app.get('/api/error1', (req, res) => {
     try {
         nonExistentFunction();
       } catch (error) {
