@@ -13,6 +13,7 @@ let rollbar = new Rollbar({
     captureUnhandledRejections: true
 })
 
+rollbar.log('Hello world!')
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/front/index.html'))
