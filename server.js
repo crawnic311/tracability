@@ -25,8 +25,11 @@ app.get('/style', (req, res) => {
 })
 
 app.get('/api/error1', (req, res) => {
-  nonExist() {
+  function nonExist() {
+      res.status(200).send('Error')
   } 
+
+  nonExist()
 })
 
 app.use(rollbar.errorHandler())
