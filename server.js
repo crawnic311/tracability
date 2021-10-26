@@ -49,6 +49,7 @@ app.post('/api/error1', (req, res) => {
 
 app.get('/api/error2', (req, res) => {
     let error2 = 'This is a warning'
+    rollbar.warning('This is your last warning')
     res.status(400).send(error2)
 })
 
