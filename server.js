@@ -20,17 +20,27 @@ app.get('/', (req, res) => {
     rollbar.info('html file served successfully!')
 })
 
-app.get('/', (req, res) => {
+app.get('/style', (req, res) => {
     res.sendFile(path.join(__dirname, '/front/style.css'))
 })
 
-app.get('/', (req, res) => {
-  function nonExist() {
-      res.status(200).send('Error')
-  } 
 
-  nonExist()
+
+app.post('/api/error1', (req, res) => {
+    let {error1} = req.body
+    error1 = error1.trim()
+
+    if (error1 === 'Water') {
+        rollbar.log('Water is vital')
+        res.status(200).send(error1)
+    } else {
+        rollbar.critical('We are out of water')
+        res.status(400).send('There\'s no more water')
+    }
+
 })
+
+
 
 app.use(rollbar.errorHandler())
 
