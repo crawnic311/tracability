@@ -28,7 +28,6 @@ app.get('/style', (req, res) => {
 
 app.post('/api/error1', (req, res) => {
     let {error1} = req.body
-    error1 = error1.trim()
 
     if (error1 === 'Water') {
         rollbar.log('Water is vital')
