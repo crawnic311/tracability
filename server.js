@@ -24,6 +24,7 @@ app.get('/style', (req, res) => {
     res.sendFile(path.join(__dirname, '/front/style.css'))
 })
 
+app.use(rollbar.errorHandler())
 
 const port = process.env.PORT ||4096
 
