@@ -16,7 +16,7 @@ let rollbar = new Rollbar({
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/front/index.html'))
-    rollbar.info('html file served successfully')
+    rollbar.info('html file served successfully!')
 })
 
 app.get('/style', (req, res) => {
