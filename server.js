@@ -20,11 +20,11 @@ app.get('/', (req, res) => {
     rollbar.info('html file served successfully!')
 })
 
-app.get('/style', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/front/style.css'))
 })
 
-app.get('/api/error1', (req, res) => {
+app.get('/', (req, res) => {
   function nonExist() {
       res.status(200).send('Error')
   } 
