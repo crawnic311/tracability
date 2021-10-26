@@ -14,7 +14,9 @@
         <input type="text" placeholder="Type name here"/>
         <button>Add Error</button>
     </form>
-    <section></section>
+    <section>
+        <button id="button0">Error0 on click</button>
+    </section>
     <script>
         const addForm = document.querySelector('form')
         const nameInput = document.querySelector('input')
@@ -48,6 +50,17 @@
         }
 
         addForm.addEventListener('submit', submitHandler)
+
+        let button = document.getElementById('button0')
+        button.addEventListener('click', error0 )
+    
+    function error0() {
+        axios.get('api/error0')
+        .then(response => {
+            console.log(res.data)
+        })
+    }
+
     </script>
 </body>
 </html>

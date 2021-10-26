@@ -25,6 +25,14 @@ app.get('/style', (req, res) => {
 })
 
 
+app.get('/api/error0', (req, res) => {
+    try {
+        nonExistantFunction();
+    } catch (error) {
+        rollbar.error(error)
+    }
+})
+
 
 app.post('/api/error1', (req, res) => {
     let {error1} = req.body
