@@ -16,6 +16,8 @@
     </form>
     <section>
         <button id="button0">Error0 on click</button>
+        <button id="button2">Error2 on click</button>
+
     </section>
     <script>
         const addForm = document.querySelector('form')
@@ -53,11 +55,21 @@
 
         let button = document.getElementById('button0')
         button.addEventListener('click', error0 )
+
+        let button2 = document.getElementById('button2')
+        button2.addEventListener('click', error2)
     
     function error0() {
         axios.get('api/error0')
         .then(response => {
             console.log(res.data)
+        })
+    }
+
+    function error2() {
+        axios.get('/api/error2')
+        .then(response => {
+           console.log(res.data)
         })
     }
 

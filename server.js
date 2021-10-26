@@ -47,6 +47,11 @@ app.post('/api/error1', (req, res) => {
 
 })
 
+app.get('/api/error2', (req, res) => {
+    let error2 = 'This is a warning'
+    res.status(400).send(error2)
+})
+
 
 
 app.use(rollbar.errorHandler())
